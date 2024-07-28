@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CL:wght@100..400&display=swap');
+
+.input {
+   width: 100%;
+   height: 32px;
+   color: var(--mainColor);
+}
+
+.label {
+   position: relative;
+}
+
+.wrapper {
+   display: flex;
+   padding: 0 20px;
+   font-family: 'Playwrite CL', cursive;
+   section {
+      flex: 1;
+      max-width: 85%;
+      @container calculator (min-width: 500px) {
+         max-width: 100%;
+      }
+   }
+}
+
+.leftButtonWrapper {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.prevInfo {
+   display: flex;
+   justify-content: end;
+   font-size: 0.65rem;
+   overflow: hidden;
+
+   button {
+      opacity: 0.5;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      color: var(--mainColor);
+      &:hover {
+         opacity: 0.8;
+         text-shadow: 0 0 30px var(--mainColor);
+         transition: 0.3s;
+      }
+   }
+}

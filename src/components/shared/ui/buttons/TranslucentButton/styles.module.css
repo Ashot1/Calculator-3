@@ -1,0 +1,21 @@
+.TranslucentButton {
+   border: none;
+   background: var(--secondaryTranslucentColor);
+   color: var(--mainColor);
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+   box-shadow: 0 3px 15px var(--shadow);
+   font-size: 1.2rem;
+   transition: scale 0.2s;
+   cursor: pointer;
+   &:hover {
+      transition: scale 0.2s;
+      scale: 0.9;
+   }
+   /*@container keyboard (max-width: 300px) {*/
+   /*   width: 50px;*/
+   /*   height: 50px;*/
+   /*   font-size: 1rem;*/
+   /*}*/
+}

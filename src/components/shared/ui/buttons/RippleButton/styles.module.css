@@ -1,0 +1,18 @@
+.rippleButton {
+   position: relative;
+   overflow: hidden;
+   border: none;
+   background: none;
+   margin: 0;
+   cursor: pointer;
+   padding: 0;
+}
+
+.ripple {
+   position: absolute;
+   content: '';
+   background: var(--secondaryTranslucentColor);
+   z-index: -1;
+   border-radius: 50%;
+   translate: -50% -50%;
+}

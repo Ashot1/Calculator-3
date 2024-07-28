@@ -1,0 +1,8 @@
+.letter {
+   opacity: 0;
+   margin: 0;
+}
+
+.word {
+   display: flex;
+}

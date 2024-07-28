@@ -1,0 +1,35 @@
+.MenuButton {
+   border: none;
+   background: transparent;
+   cursor: pointer;
+   padding: 10px 20px;
+   position: relative;
+   width: 60px;
+   height: 60px;
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 5px;
+   span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--mainColor);
+   }
+   span:nth-child(1) {
+      align-self: end;
+   }
+   &[data-isactive='true'] {
+      grid-template-columns: 1fr 1fr;
+   }
+   &[data-isactive='true'] span {
+      width: 5px;
+      height: 5px;
+      border-radius: 3px;
+      background: transparent;
+      border: 2px solid var(--mainColor);
+   }
+   &[data-isactive='true'] span:nth-child(1),
+   &[data-isactive='true'] span:nth-child(2) {
+      align-self: end;
+   }
+}

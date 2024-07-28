@@ -1,0 +1,37 @@
+.RotatedButton {
+   display: flex;
+   background: transparent;
+   border: none;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   transition: scale 0.1s ease-in-out;
+   animation: RotatedButtonAnimation 0.5s ease-in-out;
+
+   svg {
+      width: 24px;
+      height: 24px;
+      transition: all 0.3s ease-in-out;
+   }
+
+   &:hover svg {
+      rotate: 180deg;
+   }
+
+   &:active {
+      scale: 0.8;
+   }
+}
+
+@keyframes RotatedButtonAnimation {
+   0% {
+      rotate: 180deg;
+      opacity: 0;
+      scale: 0;
+   }
+   100% {
+      scale: 1;
+      rotate: 0;
+      opacity: 1;
+   }
+}

@@ -1,0 +1,9 @@
+.wrapper {
+   width: 150px;
+   place-items: center;
+   display: grid;
+   height: 30px;
+   input {
+      width: 90%;
+   }
+}

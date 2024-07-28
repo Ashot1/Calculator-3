@@ -1,0 +1,15 @@
+.wrapper {
+   margin-top: 0.8rem;
+   height: 60px;
+   position: relative;
+   display: flex;
+   padding: 0 15px 0 15px;
+}
+
+.SunButton {
+   border-radius: 25px;
+}
+
+.centerContainer {
+   flex: 1;
+}

@@ -1,0 +1,21 @@
+.flippedText {
+   margin: 0 0 5px 0;
+   display: flex;
+   p {
+      opacity: 0;
+      animation: typing 0.1s ease-in;
+      animation-fill-mode: forwards;
+      margin: 0;
+   }
+}
+
+@keyframes typing {
+   0% {
+      transform: translateX(25px);
+      opacity: 0;
+   }
+   100% {
+      transform: translateX(0);
+      opacity: 1;
+   }
+}

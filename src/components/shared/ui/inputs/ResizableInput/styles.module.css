@@ -1,0 +1,16 @@
+.resizableInput {
+   text-align: right;
+   box-sizing: border-box;
+   border: none;
+   background: none;
+   outline: none;
+   /*outline: 2px solid transparent;*/
+   transition: 0.2s outline-color;
+   border-radius: 10px;
+   padding: 1.3rem 0.5rem;
+
+   &:focus {
+      /*outline: 2px solid var(--mainTranslucentColor);*/
+      transition: 0.2s outline-color;
+   }
+}

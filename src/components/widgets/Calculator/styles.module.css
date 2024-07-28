@@ -1,0 +1,74 @@
+.calculator {
+   container: calculator / size;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   overflow: hidden;
+   flex-direction: column;
+   background: var(--calculator-background);
+   box-shadow: var(--calculator-shadow);
+   @media (min-width: 768px) {
+      width: 700px;
+      height: clamp(600px, 90%, 800px);
+      border-radius: 15px;
+   }
+
+   @media (min-width: 1024px) {
+      width: 900px;
+      height: clamp(600px, 80%, 800px);
+   }
+}
+
+.bottomBlock {
+   min-height: 60%;
+   position: relative;
+   margin-top: 10px;
+   display: flex;
+   @container calculator (min-width: 600px) {
+      min-height: 60%;
+   }
+}
+.keyboard {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   background: var(--keyboard-background);
+   box-shadow: 0 -5px 70px rgb(0, 0, 0, 0.2);
+   top: 0;
+   left: 0;
+   animation: KeyboardCreate 0.5s ease-in-out;
+   @container calculator (min-width: 500px) {
+      position: relative;
+      box-shadow: none;
+      background: none;
+   }
+   @container calculator (min-width: 900px) {
+      width: 60%;
+   }
+}
+
+@keyframes KeyboardCreate {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
+}
+
+.history {
+   width: 100%;
+   height: 100%;
+}
+
+.display {
+   flex: 1;
+   display: flex;
+   align-items: end;
+}
+
+button.hideWhenDesktop {
+   @container calculator (min-width: 500px) {
+      display: none;
+   }
+}

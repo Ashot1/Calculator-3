@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+   <head>
+      <meta charset="UTF-8" />
+      <link rel="icon" type="image/svg+xml" href="/icon.png" />
+      <meta
+         name="viewport"
+         content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+      />
+      <meta name="color-scheme" content="dark light" />
+      <meta name="theme-color" content="transparent" />
+      <link rel="manifest" href="/manifest/manifest.json" />
+      <meta
+         name="keywords"
+         content="Калькулятор, Calculator, Futuristic Calculator, Sound Effects, Animations, PWA, Accessibility, калькулятор с звуковыми эффектами, анимированный калькулятор, Progressive Web App"
+      />
+      <meta
+         name="description"
+         content="Онлайн калькулятор с возможностью установки PWA, который поможет вам быстро и точно производить вычисления в любое время и в любом месте. Установите его себе на главный экран своего телефона или компьютера и получайте доступ к удобному и современному интерфейсу калькулятора одним кликом."
+      />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="/index.html" />
+      <meta property="og:image" content="/logo.png" />
+      <meta property="og:locale" content="ru-RU" />
+      <meta
+         property="og:description"
+         content="Онлайн калькулятор с возможностью установки PWA, который поможет вам быстро и точно производить вычисления в любое время и в любом месте. Установите его себе на главный экран своего телефона или компьютера и получайте доступ к удобному и современному интерфейсу калькулятора одним кликом."
+      />
+      <meta
+         name="twitter:description"
+         content="Онлайн калькулятор с возможностью установки PWA, который поможет вам быстро и точно производить вычисления в любое время и в любом месте. Установите его себе на главный экран своего телефона или компьютера и получайте доступ к удобному и современному интерфейсу калькулятора одним кликом."
+      />
+      <meta name="twitter:image" content="/logo.png" />
+      <meta property="og:title" content="Calculator 3" />
+      <meta name="twitter:title" content="Calculator 3" />
+      <meta name="application-name" content="Calculator 3" />
+      <title>Calculator 3</title>
+   </head>
+   <body>
+      <script>
+         const theme = localStorage.getItem('theme')
+         if (theme) document.documentElement.className = theme
+      </script>
+      <div id="root"></div>
+      <script type="module" src="/src/main.tsx"></script>
+   </body>
+</html>
