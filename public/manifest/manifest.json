@@ -21,9 +21,10 @@
    "display": "standalone",
    "scope": "/index.html",
    "start_url": "/index.html",
+   "id": "/index.html",
    "name": "Calculator 3",
    "short_name": "Calculator 3",
-   "description": "Онлайн калькулятор с возможностью установки PWA, который поможет вам быстро и точно производить вычисления в любое время и в любом месте. Установите его себе на главный экран своего телефона или компьютера и получайте доступ к удобному и современному интерфейсу калькулятора одним кликом.",
+   "description": "Онлайн калькулятор с возможностью установки PWA поможет вам быстро и точно производить вычисления в любое время и месте. Установите на главный экран телефона или ПК для удобного доступа одним кликом.",
    "screenshots": [
       {
          "src": "/manifest/screenshots/desktop-light.png",
@@ -61,8 +62,7 @@
    "icons": [
       {
          "src": "windows11/SmallTile.scale-100.png",
-         "sizes": "71x71",
-         "purpose": "maskable"
+         "sizes": "71x71"
       },
       {
          "src": "windows11/SmallTile.scale-125.png",
@@ -71,8 +71,7 @@
       },
       {
          "src": "windows11/SmallTile.scale-150.png",
-         "sizes": "107x107",
-         "purpose": "maskable"
+         "sizes": "107x107"
       },
       {
          "src": "windows11/SmallTile.scale-200.png",
@@ -476,13 +475,11 @@
       },
       {
          "src": "android/android-launchericon-96-96.png",
-         "sizes": "96x96",
-         "purpose": "maskable"
+         "sizes": "96x96"
       },
       {
          "src": "android/android-launchericon-72-72.png",
-         "sizes": "72x72",
-         "purpose": "maskable"
+         "sizes": "72x72"
       },
       {
          "src": "android/android-launchericon-48-48.png",
@@ -531,8 +528,7 @@
       },
       {
          "src": "ios/60.png",
-         "sizes": "60x60",
-         "purpose": "maskable"
+         "sizes": "60x60"
       },
       {
          "src": "ios/64.png",
@@ -546,8 +542,7 @@
       },
       {
          "src": "ios/76.png",
-         "sizes": "76x76",
-         "purpose": "maskable"
+         "sizes": "76x76"
       },
       {
          "src": "ios/80.png",

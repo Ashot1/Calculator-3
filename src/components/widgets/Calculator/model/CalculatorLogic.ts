@@ -5,7 +5,7 @@ const OperatorsRegExp = /(\(|\)|\+|\-|\*|\/|\√)/
 // функция для получения ответа из обработанной строки
 const Calculate = (value: string): string => {
    try {
-      return eval(value).toString()
+      return new Function('return ' + value)().toString()
    } catch (e) {
       console.error('Ошибка вычисления: \n', e)
       return `Ошибка`
