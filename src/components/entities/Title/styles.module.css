@@ -21,6 +21,13 @@
    padding: 0;
 }
 
+button.heading {
+   color: var(--mainColor);
+   cursor: pointer;
+   background: none;
+   border: none;
+}
+
 @keyframes text-shine {
    0% {
       text-shadow: 0 0 0 var(--mainColor);

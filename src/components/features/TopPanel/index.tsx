@@ -10,11 +10,12 @@ import SoundButton from '../../entities/SoundButton'
 import SoundIsland from '../../entities/SoundIsland'
 import useSound from 'use-sound'
 import TopMenuSound from '../../shared/sound/open_menu.ogg'
+import packageJSON from '../../../../package.json'
 
-type IslandState = 'sound' | 'theme' | undefined
+type IslandState = 'sound' | 'theme' | 'version' | undefined
 
 const TopPanel: FC = memo(() => {
-   const [isOpenIsland, setOpenIsland] = useState<IslandState>()
+   const [ContentState, setContentState] = useState<IslandState>()
    const { Volume } = useSettings()
    const [play, { sound }] = useSound(TopMenuSound, { playbackRate: 1 })
 
@@ -32,7 +33,7 @@ const TopPanel: FC = memo(() => {
       return () => {
          sound._volume = parseInt(Volume) / 2
          play()
-         setOpenIsland(newState)
+         setContentState(newState)
       }
    }
 
@@ -44,9 +45,22 @@ const TopPanel: FC = memo(() => {
          />
          <div className={styles.centerContainer}>
             <AnimatePresence mode="wait">
-               {!isOpenIsland && <Title key="NoIsland" />}
-               {isOpenIsland === 'theme' && <ThemeIsland key="themeIsland" />}
-               {isOpenIsland === 'sound' && <SoundIsland key="soundIsland" />}
+               {!ContentState && (
+                  <Title
+                     text="Calculator-3"
+                     key="NoIsland"
+                     onClick={changeIslandState('version')}
+                  />
+               )}
+               {ContentState === 'theme' && <ThemeIsland key="themeIsland" />}
+               {ContentState === 'sound' && <SoundIsland key="soundIsland" />}
+               {ContentState === 'version' && (
+                  <Title
+                     text={`Версия-${packageJSON.version}`}
+                     key="versionIsland"
+                     onClick={changeIslandState('version')}
+                  />
+               )}
             </AnimatePresence>
          </div>
          <RotatedButton
