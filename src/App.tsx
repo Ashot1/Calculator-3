@@ -23,7 +23,6 @@ const ToasterRoot = () => {
    return (
       <Toaster
          position="top-right"
-         closeButton
          containerAriaLabel="Уведомления"
          theme={forcedTheme}
          visibleToasts={3}
