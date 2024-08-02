@@ -1,0 +1,35 @@
+@font-face {
+   font-family: 'Montserrat Alternates';
+   font-weight: 400;
+   font-style: normal;
+   src: url('./Montserrat_Alternates/MontserratAlternates-Regular.woff2')
+      format('woff2');
+}
+
+@font-face {
+   font-family: 'Bellota';
+   font-weight: 300;
+   font-style: normal;
+   src: url('./Bellota/Bellota-Light.woff2') format('woff2');
+}
+
+@font-face {
+   font-family: 'Bellota';
+   font-weight: 400;
+   font-style: normal;
+   src: url('./Bellota/Bellota-Regular.woff2') format('woff2');
+}
+
+@font-face {
+   font-family: 'Jura';
+   font-weight: 400;
+   font-style: normal;
+   src: url('./Jura/Jura-Regular.woff2') format('woff2');
+}
+
+@font-face {
+   font-family: 'Space Grotesk';
+   font-weight: 400;
+   font-style: normal;
+   src: url('./Space_Grotesk/SpaceGrotesk-Regular.woff2') format('woff2');
+}
