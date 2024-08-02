@@ -26,13 +26,13 @@ const Keyboard = forwardRef<HTMLDivElement, KeyboardProps>(
       })
 
       const defaultActionWithSound = (key: string) => {
-         if (sound) sound._volume = parseInt(Volume) / 8
+         if (sound) sound._volume = parseInt(Volume) / 16
          play()
          defaultAction(key)
       }
 
       const operatorActionWithSound = (key: string) => {
-         sound._volume = parseInt(Volume) / 8
+         sound._volume = parseInt(Volume) / 16
          play()
          operatorAction(key)
       }
