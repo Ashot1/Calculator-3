@@ -77,7 +77,7 @@ const Island: FC<IslandProps> = ({
    return (
       <motion.div
          ref={scope}
-         className={styles.Island}
+         className={styles.Wrapper}
          /*
          // @ts-ignore */
          initial={{
@@ -86,7 +86,11 @@ const Island: FC<IslandProps> = ({
             ...customSelfAnimateOut?.keyframes,
          }}
       >
-         <motion.div initial={{ width: 50, height: 20 }} id="island">
+         <motion.div
+            initial={{ width: 50, height: 20 }}
+            id="island"
+            className={styles.Island}
+         >
             {children}
          </motion.div>
       </motion.div>
