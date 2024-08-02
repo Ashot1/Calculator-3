@@ -31,8 +31,10 @@ const TopPanel: FC = memo(() => {
          prev === state ? undefined : state
 
       return () => {
-         sound._volume = parseInt(Volume) / 2
-         play()
+         if (sound) {
+            sound._volume = parseFloat(Volume) / 2
+            play()
+         }
          setContentState(newState)
       }
    }

@@ -43,8 +43,10 @@ const Calculator: FC = () => {
 
    const OpenHistory = () =>
       setIsOpenHistory((prev) => {
-         sound._volume = parseInt(Volume)
-         play()
+         if (sound) {
+            sound._volume = parseFloat(Volume)
+            play()
+         }
          animate(scope.current, {
             transform: !prev ? 'translateY(101%)' : 'translateY(0)',
             display: !prev ? 'none' : 'flex',

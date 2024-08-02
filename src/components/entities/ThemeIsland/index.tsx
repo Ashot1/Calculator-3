@@ -23,8 +23,10 @@ const ThemeIsland: FC = () => {
    const [play, { sound }] = useSound(ChangeThemeSound)
 
    const changeTheme = (e: MouseEvent<HTMLButtonElement>) => {
-      sound._volume = parseInt(Volume) / 3
-      play()
+      if (sound) {
+         sound._volume = parseFloat(Volume) / 3
+         play()
+      }
       setTheme(e.currentTarget.value as Theme)
    }
 

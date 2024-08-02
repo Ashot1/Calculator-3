@@ -33,12 +33,15 @@ const History = forwardRef<HTMLDivElement, HistoryProps>(
       }
 
       const playSound = () => {
-         sound._volume = parseInt(Volume)
-         play()
+         if (sound) {
+            sound._volume = parseFloat(Volume)
+            play()
+         }
       }
 
       const playDeleteSound = () => {
-         deleteSound._volume = parseInt(Volume) / 5
+         if (!deleteSound) return
+         deleteSound._volume = parseFloat(Volume) / 5
          deletePlay()
       }
 

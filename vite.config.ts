@@ -8,7 +8,9 @@ export default defineConfig({
       react(),
       VitePWA({
          registerType: 'autoUpdate',
-         devOptions: { enabled: true },
+         workbox: {
+            globPatterns: ['**/*.{js,css,html,ogg,mp3,json}'],
+         },
       }),
    ],
 })
