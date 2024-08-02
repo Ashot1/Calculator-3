@@ -58,7 +58,7 @@ const History = forwardRef<HTMLDivElement, HistoryProps>(
                style={{ '--number': `${history.length + 1}` } as CSSProperties}
             >
                {history.length <= 0 && <li aria-label="Список пуст"></li>}
-               <AnimatePresence mode="wait">
+               <AnimatePresence>
                   {history.map((item, index) => {
                      const Serial = history.length - index
                      return (
