@@ -44,9 +44,9 @@ const History = forwardRef<HTMLDivElement, HistoryProps>(
 
       return (
          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.95, opacity: 0 }}
+            initial={{ opacity: 0, transform: 'scale(0.85)' }}
+            animate={{ opacity: 1, transform: 'scale(1)' }}
+            exit={{ opacity: 0, transform: 'scale(0.9)' }}
             className={clsx(styles.wrapper, className)}
             ref={ref}
          >
