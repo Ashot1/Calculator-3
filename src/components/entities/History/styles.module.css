@@ -24,7 +24,7 @@
    gap: 15px;
    padding-left: 10px;
    overflow-y: scroll;
-   max-height: 300px;
+   max-height: 60%;
    counter-reset: numbering var(--number);
    scrollbar-color: var(--mainColor) transparent;
    li {

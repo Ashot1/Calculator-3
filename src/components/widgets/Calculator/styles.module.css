@@ -20,7 +20,7 @@
 }
 
 .bottomBlock {
-   min-height: 60%;
+   height: 60%;
    position: relative;
    margin-top: 10px;
    display: flex;
