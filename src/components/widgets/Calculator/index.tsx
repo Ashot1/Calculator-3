@@ -74,6 +74,7 @@ const Calculator: FC = () => {
    const afterResult = (expression: string) => {
       putToHistory(expression)
       setLastExpression(expression.split('=')[0])
+      navigator.vibrate(100)
    }
    // нажатие на обычные кнопки, которые просто добавляются
    const addToInput = (value: string) => {

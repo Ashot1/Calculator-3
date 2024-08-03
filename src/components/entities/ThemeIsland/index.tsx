@@ -27,6 +27,7 @@ const ThemeIsland: FC = () => {
          sound._volume = parseFloat(Volume) / 3
          play()
       }
+      navigator.vibrate(100)
       setTheme(e.currentTarget.value as Theme)
    }
 
