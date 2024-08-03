@@ -14,19 +14,20 @@ const Calculate = (value: string): string => {
 
 // функция для преобразования знака '√' в '**(1/2)'
 const transformSQRT = (Numbers: (string | number)[], indexSQRT: number) => {
+   // Убираем знак корня. Если до него было число, то заменяем на знак умножения (2√2)
    const deleteSQRTSymbol = () => {
-      // Убираем знак корня. Если до него было число, то заменяем на знак умножения (2√2)
-      Numbers[indexSQRT] = ''
-      if (typeof Numbers.at(indexSQRT - 1) == 'number') {
+      if (typeof Numbers.at(indexSQRT - 1) == 'number' && indexSQRT > 0) {
          Numbers[indexSQRT] = '*'
+         return
       }
+      Numbers.splice(indexSQRT, 1)
    }
 
    // если после корня число, то оборачиваем в скобки
-   if (Numbers.at(indexSQRT + 1) !== '(' && Numbers.at(indexSQRT + 2) !== '(') {
+   if (Numbers.at(indexSQRT + 1) !== '(') {
       Numbers.splice(indexSQRT + 1, 0, '(')
       Numbers.splice(indexSQRT + 3, 0, ')')
-      Numbers.splice(indexSQRT + 4, 0, '**(1/2)')
+      Numbers.splice(indexSQRT + 4, 0, '**', '(', '1/2', ')')
       deleteSQRTSymbol()
       return Numbers
    }
@@ -55,13 +56,16 @@ const transformSQRT = (Numbers: (string | number)[], indexSQRT: number) => {
 // основная функция расчета
 export const getResult = (value: string) => {
    // деление приходящей строки на математические операторы и преобразованные числа
-   // при наличии лишних символов заменяем их на пустую строку
-   let Numbers = value.split(OperatorsRegExp).map((inp) => {
-      const parsed = parseFloat(inp)
-      if (isNaN(parsed) && !OperatorsRegExp.test(inp)) return ''
-      if (!parsed) return inp
-      return parsed
-   })
+   // при наличии лишних символов заменяем их на пустую строку, потом удаляем пустые строки
+   let Numbers = value
+      .split(OperatorsRegExp)
+      .map((inp) => {
+         const parsed = parseFloat(inp)
+         if (isNaN(parsed) && !OperatorsRegExp.test(inp)) return ''
+         if (!parsed) return inp
+         return parsed
+      })
+      .filter((inp) => inp !== '')
 
    for (let i = 0; i < Numbers.length; i++) {
       // проверка на корень
@@ -69,11 +73,14 @@ export const getResult = (value: string) => {
          Numbers = transformSQRT(Numbers, i)
       }
 
+      // следующие условия не обрабатываются если находятся в первой ячейке
+      if (i <= 0) continue
+
       // если текущий символ - открывающая скобка, которая находится сразу после числа или закрывающей скобки,
       // то добавляем перед ней знак умножения
       if (
          (Numbers.at(i) === '(' && typeof Numbers.at(i - 1) == 'number') ||
-         (Numbers.at(i) === '(' && Numbers.at(i - 2) === ')')
+         (Numbers.at(i) === '(' && Numbers.at(i - 1) === ')')
       ) {
          Numbers.splice(i, 0, '*')
       }
