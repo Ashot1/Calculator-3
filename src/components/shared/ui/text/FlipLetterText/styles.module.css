@@ -1,7 +1,7 @@
 .flippedText {
    margin: 0 0 5px 0;
    display: flex;
-   p {
+   span {
       opacity: 0;
       animation: typing 0.1s ease-in;
       animation-fill-mode: forwards;

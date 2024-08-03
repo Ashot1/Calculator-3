@@ -20,7 +20,7 @@ const FlipLetterText: FC<FlipLetterTextProps> = ({
             <span
                aria-hidden
                key={char + i}
-               style={{ animationDelay: `${0.05 * i + additionalDelay}s` }}
+               style={{ animationDelay: `${0.02 * i + additionalDelay}s` }}
             >
                {char}
             </span>
