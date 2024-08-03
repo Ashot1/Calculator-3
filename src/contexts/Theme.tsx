@@ -46,7 +46,14 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
       }
 
       const doc = document.documentElement
-      doc.className = getTheme()
+      const metaTag = document.querySelector('meta[name="theme-color"]')
+      const SelectedTheme = getTheme()
+      doc.className = SelectedTheme
+      if (metaTag)
+         metaTag.setAttribute(
+            'content',
+            SelectedTheme === 'dark' ? '#0a0524' : '#f9f9f9'
+         )
    }, [getTheme])
 
    const setTheme = (forcedTheme: Theme) => setThemeStorage(forcedTheme)
