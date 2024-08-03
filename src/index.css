@@ -47,7 +47,7 @@
    --mainTranslucentColor: rgba(0, 0, 0, 0.05);
    --secondaryTranslucentColor: rgba(255, 255, 255, 0.5);
    --calculator-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-   --shadow: rgba(0, 0, 0, 0.08);
+   --shadow: rgba(0, 0, 0, 0.02);
    --primary-color: #fbfbfb;
    --keyboard-background: rgba(255, 255, 255, 0.2);
    --keyboard-shadow: 0 -5px 70px rgb(0, 0, 0, 0.1);
