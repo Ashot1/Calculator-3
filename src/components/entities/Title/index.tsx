@@ -2,14 +2,19 @@ import { FC } from 'react'
 import { BlurredLettersText } from '../../shared/ui/text/BluredLetterText'
 import styles from './styles.module.css'
 
-const Title: FC<{ text: string; onClick?: () => void }> = ({
+const Title: FC<{ text: string; onClick?: () => void; ariaLabel?: string }> = ({
    text,
    onClick,
+   ariaLabel,
 }) => {
    const Component = onClick ? 'button' : 'h1'
 
    return (
-      <Component className={styles.heading} onClick={onClick}>
+      <Component
+         className={styles.heading}
+         onClick={onClick}
+         aria-label={ariaLabel}
+      >
          <BlurredLettersText
             text={text}
             className={styles.title}

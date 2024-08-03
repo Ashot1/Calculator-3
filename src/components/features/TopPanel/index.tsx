@@ -49,6 +49,7 @@ const TopPanel: FC = memo(() => {
             <AnimatePresence mode="wait">
                {!ContentState && (
                   <Title
+                     ariaLabel="Calculator-3. Узнать версию"
                      text="Calculator-3"
                      key="NoIsland"
                      onClick={changeIslandState('version')}
